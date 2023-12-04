@@ -8,22 +8,32 @@ using System.Xml.Linq;
 
 namespace LinkedList
 {
-    public class Item<T>
-    {
-        public Item(T data)
-        {
-            Data = data;
-        }
-        public T Data { get; set; }
-        public Item<T> Next { get; set; }
-    }
    
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.Write("123");
-            
+            var list = new LinkedList<int>();
+            list.Add(43);
+            list.Add(2);
+            list.Add(31231);
+            list.Add(-12);
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+
+            list.Remove(31231);
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine();
+
+            Console.ReadLine();
         }
     }
 }
